@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="uts-8" />
+        <title>Rock, paper, scissor</title>
+        <script>
+            // 1 is rock, 2 is paper, 3 is scissor
+            let player = 0
+            let pc = 1
+            player = prompt("Choose: 1 for rock, 2 for paper, 3 for scissor")
+            //alert("Choose " + player)
+            if(player == 1) {
+                alert("You chose rock")
+            } else if(player == 2) {
+                alert("You chose paper")
+            } else if(player == 3) {
+                alert("You chose scissor")
+            } else {
+                alert("You chose PERDER")
+            }
+            if(pc == 1) {
+                alert("PC choose rock")
+            } else if(pc == 2) {
+                alert("PC choose paper")
+            } else if(pc == 3) {
+                alert("PC choose scissor")
+            }
+            // COMBAT
+            if(pc == player){
+                alert("TIE")
+            } else if(player == 1 && pc == 3) {
+                alert("YOU WIN")
+            } else if(player == 2 && pc == 1) {
+                alert("YOU WIN")
+            } else if(player == 3 && pc == 2) {
+                alert("YOU WIN")
+            } else {
+                alert("YOU LOSE")
+            }
+            </script>
+    </head>
+    <body>
+        <h1>Rock, paper, scissor</h1>
+    </body>
+</html>
