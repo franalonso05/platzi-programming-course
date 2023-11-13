@@ -1,5 +1,7 @@
 let playerAttack
 let enemysAttack
+let playerLives = 3
+let enemyLives = 3
 
 function startGame() {
     let buttonPet = document.getElementById('button-pet')
@@ -70,16 +72,33 @@ function randomEnemysAttack() {
     } else {
         enemysAttack = "LAND"
     }
-
-    createMessage()
+    
+    combat()
 }
 
+function combat() {
+    let spanPlayerLives = document.getElementById('player-lives')
+    let spanEnemyLives = document.getElementById('enemy-lives')
 
-function createMessage() {
+    if(enemysAttack == playerAttack){
+        createMessage("TIE")
+    } else if((playerAttack == 'FIRE' && enemysAttack == 'LAND') || (playerAttack == 'WATER' && enemysAttack == 'FIRE') || (playerAttack == 'LAND' && enemysAttack == 'WATER')) {
+        createMessage("YOU WIN")
+        enemyLives--
+        spanEnemyLives.innerHTML = enemyLives
+    } else {
+        createMessage("YOU LOSE")
+        playerLives--
+        spanPlayerLives.innerHTML = playerLives
+
+    }
+}
+
+function createMessage(result) {
     let sectionMessages = document.getElementById('messages')
 
     let paragraph = document.createElement('p')
-    paragraph.innerHTML = 'Your pet attacked with ' + playerAttack + ', the enemys pet attacked with ' + enemysAttack + '- YOU WIN 🎉'
+    paragraph.innerHTML = 'Your pet attacked with ' + playerAttack + ', the enemys pet attacked with ' + enemysAttack + '- ' + result
 
     sectionMessages.appendChild(paragraph)
 }
