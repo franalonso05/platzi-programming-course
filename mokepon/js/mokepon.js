@@ -1,4 +1,5 @@
 let playerAttack
+let enemysAttack
 
 function startGame() {
     let buttonPet = document.getElementById('button-pet')
@@ -34,12 +35,12 @@ function selectPet(){
 }
 
 function selectEnemyPet() {
-    let randomattack = aleatorio(1,3)
+    let randompet = aleatorio(1,3)
     let spanEnemyPet = document.getElementById('enemys-pet')
 
-    if (randomattack == 1) {
+    if (randompet == 1) {
         spanEnemyPet.innerHTML = 'Hipodoge'
-    } else if (randomattack == 2) {
+    } else if (randompet == 2) {
         spanEnemyPet.innerHTML = 'Capipego'
     } else {
         spanEnemyPet.innerHTML = 'Ratigueya'
@@ -48,15 +49,39 @@ function selectEnemyPet() {
 
 function fireAttack() {
     playerAttack = "FIRE"
-    alert(playerAttack)
+    randomEnemysAttack()
 }
 function waterAttack() {
     playerAttack = "WATER"
-    alert(playerAttack)
+    randomEnemysAttack()
 }
 function landAttack() {
     playerAttack = "LAND"
-    alert(playerAttack)
+    randomEnemysAttack()
+}
+
+function randomEnemysAttack() {
+    let randomAttack = aleatorio(1,3)
+
+    if (randomAttack == 1) {
+        enemysAttack = "FIRE"
+    } else if (randomAttack == 2){
+        enemysAttack = "WATER"
+    } else {
+        enemysAttack = "LAND"
+    }
+
+    createMessage()
+}
+
+
+function createMessage() {
+    let sectionMessages = document.getElementById('messages')
+
+    let paragraph = document.createElement('p')
+    paragraph.innerHTML = 'Your pet attacked with ' + playerAttack + ', the enemys pet attacked with ' + enemysAttack + '- YOU WIN 🎉'
+
+    sectionMessages.appendChild(paragraph)
 }
 
 function aleatorio(min, max) {
