@@ -1,0 +1,18 @@
+.title {
+    color: lightgreen;
+    width: 325px;
+    height: 50px;
+    background-color: teal;
+}
+
+label {
+    background-color: aqua;
+}
+
+input {
+    background-color: cadetblue;
+}
+
+button {
+    background-color: tomato;
+}

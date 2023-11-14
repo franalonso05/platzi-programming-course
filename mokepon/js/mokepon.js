@@ -123,7 +123,7 @@ function createMessage(result) {
     let sectionMessages = document.getElementById('messages')
 
     let paragraph = document.createElement('p')
-    paragraph.innerHTML = 'Your pet attacked with ' + playerAttack + ', the enemys pet attacked with ' + enemysAttack + '- ' + result
+    paragraph.innerHTML = `Your pet attacked with ${playerAttack}, the enemys pet attacked with ${enemysAttack} - ${result}`
 
     sectionMessages.appendChild(paragraph)
 }
