@@ -5,14 +5,17 @@
     background-color: teal;
 }
 
-label {
-    background-color: aqua;
+#select-pet {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-input {
-    background-color: cadetblue;
-}
-
-button {
-    background-color: tomato;
+.mokepon-cards {
+    width: 100px;
+    height: 100px;
+    background: aquamarine;
+    padding: 10px;
+    box-sizing: border-box;
 }
