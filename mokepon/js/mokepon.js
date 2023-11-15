@@ -120,21 +120,26 @@ function reviewLives() {
 }
 
 function createMessage(result) {
-    let sectionMessages = document.getElementById('messages')
+    let sectionMessages = document.getElementById('result')
+    let playerAttacks = document.getElementById('player-attacks')
+    let enemyAttacks = document.getElementById('enemy-attacks')
 
-    let paragraph = document.createElement('p')
-    paragraph.innerHTML = `Your pet attacked with ${playerAttack}, the enemys pet attacked with ${enemysAttack} - ${result}`
+    
+    let newPlayerAttack = document.createElement('p')
+    let newEnemyAttack = document.createElement('p')
 
-    sectionMessages.appendChild(paragraph)
+    sectionMessages.innerHTML = result
+    newPlayerAttack.innerHTML = playerAttack
+    newEnemyAttack.innerHTML = enemysAttack
+
+    playerAttacks.appendChild(newPlayerAttack)
+    enemyAttacks.appendChild(newEnemyAttack)
 }
 
 function createFinalMessage(finalResult) {
-    let sectionMessages = document.getElementById('messages')
+    let sectionMessages = document.getElementById('result')
 
-    let paragraph = document.createElement('p')
-    paragraph.innerHTML = finalResult
-
-    sectionMessages.appendChild(paragraph)
+    sectionMessages.innerHTML = finalResult
 
     let buttonFire = document.getElementById('button-fire')
     buttonFire.disabled = true
