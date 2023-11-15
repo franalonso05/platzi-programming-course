@@ -28,7 +28,7 @@ function startGame() {
 
 function selectPet(){
     let sectionSelectAttack = document.getElementById('select-attack')
-    sectionSelectAttack.style.display = 'block'
+    sectionSelectAttack.style.display = 'flex'
 
     let sectionSelectPet = document.getElementById('select-pet')
     sectionSelectPet.style.display = 'none'
