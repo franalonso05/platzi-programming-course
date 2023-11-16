@@ -23,7 +23,7 @@ body {
     font-size: 20px;
 }
 
-.cards {
+.cards, .attack-cards {
     display: flex;
     gap: 10px;
 }
@@ -43,7 +43,8 @@ body {
 
 .mokepon-cards img {
     width: 80px;
-    margin: 10px
+    margin: 10px;
+    border-radius: 20px;
 }
 #button-pet {
     width: 180px;
@@ -58,6 +59,10 @@ body {
 
 input {
     display: none;
+}
+
+input:checked + label {
+    background: #5D8BF4;
 }
 
 #select-attack {
@@ -97,5 +102,23 @@ input {
 .attacks {
     display: grid;
     grid-template-columns: 100px 100px;
-    
+    color: white;
+}
+
+#player-lives, #enemy-lives {
+    font-size: 32px;
+    margin-bottom: 0;
+}
+
+.attack-player, .attack-enemy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+@media (max-width: 360px) {
+    .cards, .attack-cards {
+        flex-direction: column;
+    }
 }
